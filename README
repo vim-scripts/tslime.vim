@@ -1,0 +1,19 @@
+This is a mirror of http://www.vim.org/scripts/script.php?script_id=3023
+
+Simple script which allow you to send portion of a buffer to a running tmux session.
+
+Based on http://technotales.wordpress.com/2007/10/03/like-slime-for-vim/ which use screen instead of tmux. 
+                                                                                                              
+_How to use this script:_ 
+  - Considering you have a running Ruby/Python/Clojure/Whatever interpreter in    window 0 of a tmux session named 'my-session'. 
+
+  - In vim, select a region in visual mode and press <C-c><C-c>. 
+
+  - You will be prompt to enter the session name.  You can type the name of the session directly, in this case 'my-session', or you can press <tab> to  cycle through all the tmux sessions that are currently running. 
+
+  - Next, you will be prompt for the window number, in this case 0. Like for session name, completion is available. 
+
+  - When you'll press enter, the text you selected will be send to your  interpreter. 
+
+Current limitation: 
+    - The text will always be send to the first pane of the tmux window as tmux doesn't have a way to know which pane you want to paste to. This is only the case for version of tmux <= 1.2 and not for the version in the cvs. 
